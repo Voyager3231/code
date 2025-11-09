@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Exam Code Bank — LaraCroft</title>
+  <meta name="description" content="Practice code bank: 12 ready-to-copy code snippets for practical exams. Dark theme with lightning animations." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+/* --------- Embedded style.css (trimmed & adjusted for single-file) --------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+:root{
+  --accent:#b74b4b;
+  --bg:#0a0a0a;
+  --card:#141414;
+  --muted:#b74b4b50;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+html{font-size:62.5%}
+body{background:black;color:#fff;min-height:100vh;overflow-x:hidden}
+header{position:fixed;top:0;left:0;width:100%;padding:1.2rem 6%;display:flex;justify-content:space-between;align-items:center;z-index:50}
+.logo{font-size:2.4rem;color:var(--accent);font-weight:800}
+nav a{color:#fff;margin-left:2.4rem;font-size:1.6rem}
+nav a.active,nav a:hover{color:var(--accent);border-bottom:3px solid var(--accent)}
+.section{padding:10rem 6% 4rem;min-height:100vh}
+.hero{display:flex;align-items:center;gap:4rem;padding-top:6rem}
+.hero .title{font-size:3.6rem}
+.hero p{font-size:1.6rem;color:#ddd;margin-top:0.6rem}
+.btn{display:inline-block;padding:0.9rem 2.2rem;border-radius:4rem;border:2px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer}
+.btn:hover{background:var(--accent);color:#000}
+/* code area */
+.codes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.6rem;margin-top:2.6rem}
+.card{background:linear-gradient(180deg,var(--card),#0f0f0f);border:1px solid var(--muted);padding:1.4rem;border-radius:1.2rem;box-shadow:0 0 18px rgba(183,75,75,0.12);position:relative}
+.card h4{color:var(--accent);font-size:1.6rem;margin-bottom:0.8rem}
+.meta{display:flex;gap:0.8rem;align-items:center;justify-content:space-between}
+.lang{font-size:1.2rem;color:#ddd}
+.actions{display:flex;gap:0.6rem}
+.small-btn{background:transparent;padding:0.5rem 0.8rem;border-radius:8px;border:1px solid #2a2a2a;color:#fff;cursor:pointer}
+.small-btn:hover{transform:translateY(-3px);box-shadow:0 0 10px var(--muted)}
+pre{background:#0b0b0b;color:#e8e8e8;padding:1rem;border-radius:0.8rem;overflow:auto;font-size:1.4rem;line-height:1.6;white-space:pre-wrap}
+.copy-toast{position:fixed;right:2rem;bottom:2rem;background:var(--accent);color:#000;padding:0.8rem 1rem;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.6);display:none;z-index:999}
+.searchbar{display:flex;gap:1rem;align-items:center}
+.input{background:#0e0e0e;border:1px solid var(--muted);padding:0.8rem 1rem;border-radius:8px;color:#fff;font-size:1.6rem}
+/* splash cursor */
+.splash-cursor{position:fixed;left:0;top:0;width:18px;height:18px;pointer-events:none;z-index:9999;border-radius:50%;background:radial-gradient(circle,var(--accent) 80%,transparent 100%);box-shadow:0 0 40px 10px rgba(183,75,75,0.6);mix-blend-mode:lighten;transform:translate(-50%,-50%)}
+.splash-cursor.splash{animation:cursor-splash .33s cubic-bezier(.68,0,.37,1.21)}
+@keyframes cursor-splash{0%{transform:translate(-50%,-50%) scale(1)}70%{transform:translate(-50%,-50%) scale(2.6)}100%{transform:translate(-50%,-50%) scale(1)}}
+/* lightning animation behind */
+.animation-container{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at bottom right,#000 0%,#000 100%)}
+.lightning{position:absolute;height:12px;width:12px;border-radius:12px;animation:woosh 1.6s infinite;}
+.lightning.white{background:#fff;box-shadow:0 50px 50px rgba(255,255,255,0.08)}
+.lightning.red{background:var(--accent);box-shadow:0 50px 50px rgba(183,75,75,0.12);animation-delay:0.2s}
+@keyframes woosh{0%{transform:translate(0,0) rotate(-35deg)}30%{transform:translate(240px,-120px) rotate(46deg)}70%{transform:translate(520px,120px) rotate(-37deg)}100%{transform:translate(760px,0) rotate(-37deg)}}
+/* responsive */
+@media(max-width:700px){.hero{flex-direction:column;text-align:center}.logo{font-size:2rem}.hero .title{font-size:2.4rem}.codes-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="animation-container">
+    <div class="lightning white" style="left:2%;top:30%;"></div>
+    <div class="lightning red" style="left:10%;top:60%;"></div>
+    <div class="lightning white" style="left:40%;top:20%;animation-delay:0.6s"></div>
+  </div>
+  <header>
+    <div class="logo">LaraCroft</div>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#codes">Codes</a>
+      <a href="#contacts">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section hero" id="top">
+    <div>
+      <h1 class="title">Exam Code Bank — 12 Practice Snippets</h1>
+      <p>Hmm... You're Hear 😒, i Think Youre Copying Codes Its Ok Just Take It and Clear Your Practical Exam <strong>To Copy</strong> any code to clipboard.</p>
+      <div style="margin-top:1.2rem" class="searchbar">
+        <input id="filter" class="input" placeholder="Search by title or language (e.g., Python, C)" />
+        <button class="btn" id="copy-all">Copy All</button>
+      </div>
+    </div>
+    <div style="flex:1;text-align:center">
+      <!-- decorative avatar / image placeholder -->
+      <svg width="220" height="220" viewBox="0 0 120 120" style="filter:drop-shadow(0 0 20px rgba(183,75,75,0.15))">
+        <circle cx="60" cy="60" r="54" fill="#0f0f0f" stroke="var(--accent)" stroke-width="2"/>
+        <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" fill="var(--accent)" font-size="18">Syin</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section" id="codes">
+    <h2 style="color:var(--accent);font-size:2.4rem">Codes</h2>
+
+    <div class="codes-grid" id="codes-grid">
+      <!-- We'll include 12 code cards. Edit code content inside <pre><code> blocks -->
+
+      <!-- 1 -->
+      <article class="card" data-lang="python" data-title="Selection & Bubble Sort">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>Selection & Bubble Sort</h4>
+        <pre><code class="code">salaries = [10000, 12000, 14000, 9000, 14000, 98712, 461452, 4826]
+
+def selection_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        min_index = i
+        for j in range(i+1, n):
+            if arr[j] &lt; arr[min_index]:
+                min_index = j
+        arr[i], arr[min_index] = arr[min_index], arr[i]
+    return arr
+
+salaries_sorted = selection_sort(salaries.copy())
+print(salaries_sorted)</code></pre>
+      </article>
+
+      <!-- 2 -->
+      <article class="card" data-lang="python" data-title="Linear & Binary Search">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>Linear & Binary Search</h4>
+        <pre><code class="code"># Linear Search
+arr = [1,24,5,6,64,6,4]
+target = 5
+
+def linear_search(arr, target):
+    for i, val in enumerate(arr):
+        if val == target:
+            print("target found at index", i)
+            return i
+    print("Target not found")
+    return -1
+
+linear_search(arr, target)
+
+# Binary Search (array must be sorted)
+def binary_search(arr, target):
+    arr = sorted(arr)
+    low = 0
+    high = len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+print(binary_search(arr, target))</code></pre>
+      </article>
+
+      <!-- 3 -->
+      <article class="card" data-lang="c" data-title="Reverse String (C)">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4></h4>
+        <pre><code class="code"></code></pre>
+      </article>
+
+      <!-- 4 -->
+      <article class="card" data-lang="java" data-title="Reverse Number (Java)">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>Student Record Management</h4>
+        <pre><code class="code"># Student Record Management System using Singly Linked List
+
+class StudentNode:
+    def __init__(self, roll_no, name, marks):
+        self.roll_no = roll_no
+        self.name = name
+        self.marks = marks
+        self.next = None
+
+class StudentLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def add_student(self, roll_no, name, marks):
+        new_node = StudentNode(roll_no, name, marks)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+        print(" Student record added.")
+
+    def delete_student(self, roll_no):
+        current = self.head
+        prev = None
+        while current:
+            if current.roll_no == roll_no:
+                if prev:
+                    prev.next = current.next
+                else:
+                    self.head = current.next
+                print(" Student record deleted.")
+                return
+            prev = current
+            current = current.next
+        print(" Student not found.")
+
+    def update_student(self, roll_no, new_name, new_marks):
+        current = self.head
+        while current:
+            if current.roll_no == roll_no:
+                current.name = new_name
+                current.marks = new_marks
+                print(" Student record updated.")
+                return
+            current = current.next
+        print(" Student not found.")
+
+    def search_student(self, roll_no):
+        current = self.head
+        while current:
+            if current.roll_no == roll_no:
+                print(f" Found: Roll No: {current.roll_no}, Name: {current.name}, Marks: {current.marks}")
+                return
+            current = current.next
+        print(" Student not found.")
+
+    def display_students(self, sort_by="roll_no", ascending=True):
+        students = []
+        current = self.head
+        while current:
+            students.append((current.roll_no, current.name, current.marks))
+            current = current.next
+
+        if sort_by == "roll_no":
+            students.sort(key=lambda x: x[0], reverse=not ascending)
+        elif sort_by == "marks":
+            students.sort(key=lambda x: x[2], reverse=not ascending)
+
+        if not students:
+            print(" No records to display.")
+            return
+
+        print("\n Student Records:")
+        for s in students:
+            print(f"Roll No: {s[0]}, Name: {s[1]}, Marks: {s[2]}")
+
+# Menu for interaction
+def menu():
+    system = StudentLinkedList()
+    while True:
+        print("\n--- Student Record Management Menu ---")
+        print("1. Add Student")
+        print("2. Delete Student")
+        print("3. Update Student")
+        print("4. Search Student")
+        print("5. Display All Students")
+        print("6. Exit")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == '1':
+            roll = int(input("Enter Roll No: "))
+            name = input("Enter Name: ")
+            marks = int(input("Enter Marks: "))
+            system.add_student(roll, name, marks)
+        elif choice == '2':
+            roll = int(input("Enter Roll No to Delete: "))
+            system.delete_student(roll)
+        elif choice == '3':
+            roll = int(input("Enter Roll No to Update: "))
+            name = input("Enter New Name: ")
+            marks = int(input("Enter New Marks: "))
+            system.update_student(roll, name, marks)
+        elif choice == '4':
+            roll = int(input("Enter Roll No to Search: "))
+            system.search_student(roll)
+        elif choice == '5':
+            sort_key = input("Sort by 'roll_no' or 'marks': ").strip()
+            order = input("Order 'asc' or 'desc': ").strip()
+            ascending = True if order == 'asc' else False
+            system.display_students(sort_by=sort_key, ascending=ascending)
+        elif choice == '6':
+            print("Exiting Student Record Management System.")
+            break
+        else:
+            print("Invalid choice. Try again.")
+
+# Start the system
+menu()
+</code></pre>
+      </article>
+
+      <!-- 5 -->
+      <article class="card" data-lang="html" data-title="Simple Form (HTML)">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>Simple Contact Form</h4>
+        <pre><code class="code">&lt;form&gt;
+  &lt;label&gt;Name&lt;/label&gt;
+  &lt;input type="text" name="name" /&gt;
+  &lt;label&gt;Message&lt;/label&gt;
+  &lt;textarea name="message"&gt;&lt;/textarea&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+      </article>
+
+      <!-- 6 -->
+      <article class="card" data-lang="javascript" data-title="DOM Toggle (JS)">
+        <div class="meta">
+          <div class="lang">Python'</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4></h4>
+        <pre><code class="code"></code></pre>
+      </article>
+
+      <!-- 7 -->
+      <article class="card" data-lang="python" data-title="Fibonacci (Python)">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>Real Time Event Processing system</h4>
+        <pre><code class="code"># Real-Time Event Processing System using Queue
+
+# Using simple list as a queue
+event_queue = []
+
+def add_event(event):
+    event_queue.append(event)
+    print(f"Event added to the queue.",event)
+
+def process_next_event():
+    if event_queue:
+        event = event_queue.pop(0)
+        print(f"Processed event: ",event)
+    else:
+        print("No events to process.")
+
+def display_pending_events():
+    if event_queue:
+        print("Pending Events:")
+        for idx, event in enumerate(event_queue, 1):
+            print(f"{idx}. {event}")
+    else:
+        print("No pending events.")
+
+def cancel_event(event_name):
+    if event_name in event_queue:
+        event_queue.remove(event_name)
+        print(f"Event has been canceled.",event_name)
+    else:
+        print(f"Event not found or already processed.",event_name)
+
+def menu():
+    while True:
+        print("\n--- EVENT MENU ---")
+        print("1. Add Event")
+        print("2. Process Next Event")
+        print("3. Display Pending Events")
+        print("4. Cancel an Event")
+        print("5. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            event = input("Enter event name: ")
+            add_event(event)
+        elif choice == '2':
+            process_next_event()
+        elif choice == '3':
+            display_pending_events()
+        elif choice == '4':
+            event_name = input("Enter event name to cancel: ")
+            cancel_event(event_name)
+        elif choice == '5':
+            print("Exiting Event Processing System.")
+            break
+        else:
+            print("Try again")
+
+# Run the menu
+menu()
+</code></pre>
+      </article>
+
+      <!-- 8 -->
+      <article class="card" data-lang="cpp" data-title="Linked List Insert (C++)">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>Singly Linked List — Insert</h4>
+        <pre><code class="code">#include &lt;iostream&gt;
+using namespace std;
+struct Node{int val;Node* next;Node(int v):val(v),next(NULL){}
+};
+// insert at head
+void insertHead(Node*& head,int v){Node* n=new Node(v);n->next=head;head=n;}
+</code></pre>
+      </article>
+
+      <!-- 9 -->
+      <article class="card" data-lang="sql" data-title="SQL Join Example">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>Division Method as Hash Function</h4>
+        <pre><code class="code">class HashTable:
+    def __init__(self, size=10):
+        self.size = size
+        self.table = [[] for _ in range(size)]  # List of empty lists (chaining)
+
+    def _hash_function(self, key):
+        return key % self.size
+
+    def insert(self, key, value):
+        index = self._hash_function(key)
+        # Check if key already exists and update
+        for pair in self.table[index]:
+            if pair[0] == key:
+                pair[1] = value
+                print(f"Updated key {key} with value {value}")
+                return
+        # Else insert new key-value pair
+        self.table[index].append([key, value])
+        print(f"Inserted key {key} with value {value}")
+
+    def search(self, key):
+        index = self._hash_function(key)
+        for pair in self.table[index]:
+            if pair[0] == key:
+                return pair[1]
+        return None  # Not found
+
+    def delete(self, key):
+        index = self._hash_function(key)
+        for i, pair in enumerate(self.table[index]):
+            if pair[0] == key:
+                del self.table[index][i]
+                print(f"Deleted key {key}")
+                return
+        print(f"Key {key} not found for deletion.")
+
+    def display(self):
+        print("Hash Table:")
+        for i, bucket in enumerate(self.table):
+            print(f"Index {i}: {bucket}")
+
+ht = HashTable()
+
+ht.insert(15, "apple")
+ht.insert(25, "banana")  # Collision with 15
+ht.insert(35, "cherry")  # Collision again
+
+print("Search 25:", ht.search(25))  # Output: banana
+ht.delete(25)
+print("Search 25 after deletion:", ht.search(25))  # Output: None
+
+ht.display()
+</code></pre>
+      </article>
+
+      <!-- 10 -->
+      <article class="card" data-lang="python" data-title="Matrix Multiplication">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>Binary Search Tree</h4>
+        <pre><code class="code"># Binary Search Tree implementation in Python
+
+class Node:
+    def __init__(self, key):
+        self.key = key
+        self.left = None
+        self.right = None
+
+
+class BST:
+    def __init__(self):
+        self.root = None
+
+    # --- INSERTION ---
+    def insert(self, root, key):
+        if root is None:
+            return Node(key)
+        if key < root.key:
+            root.left = self.insert(root.left, key)
+        elif key > root.key:
+            root.right = self.insert(root.right, key)
+        return root
+
+    # --- SEARCH ---
+    def search(self, root, key):
+        if root is None or root.key == key:
+            return root
+        if key < root.key:
+            return self.search(root.left, key)
+        else:
+            return self.search(root.right, key)
+
+    # --- INORDER DISPLAY (sorted order) ---
+    def inorder(self, root):
+        if root:
+            self.inorder(root.left)
+            print(root.key, end=" ")
+            self.inorder(root.right)
+
+    # --- DELETION ---
+    def delete(self, root, key):
+        if root is None:
+            return root
+
+        # Find the node to delete
+        if key < root.key:
+            root.left = self.delete(root.left, key)
+        elif key > root.key:
+            root.right = self.delete(root.right, key)
+        else:
+            # Node with only one child or no child
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+
+            # Node with two children:
+            # Get inorder successor (smallest in the right subtree)
+            root.key = self.min_value_node(root.right).key
+            root.right = self.delete(root.right, root.key)
+        return root
+
+    def min_value_node(self, node):
+        current = node
+        while current.left is not None:
+            current = current.left
+        return current
+
+
+# --- MAIN PROGRAM ---
+if __name__ == "__main__":
+    bst = BST()
+    root = None
+
+    # Insert nodes
+    data = [50, 30, 70, 20, 40, 60, 80]
+    for val in data:
+        root = bst.insert(root, val)
+
+    print("Inorder traversal of BST:")
+    bst.inorder(root)
+
+    # Search a value
+    key = 40
+    print(f"\n\nSearching for {key} in BST:")
+    result = bst.search(root, key)
+    if result:
+        print(f"{key} found in BST.")
+    else:
+        print(f"{key} not found in BST.")
+
+    # Delete a value
+    delete_key = 30
+    print(f"\nDeleting {delete_key} from BST...")
+    root = bst.delete(root, delete_key)
+
+    print("Inorder traversal after deletion:")
+    bst.inorder(root)
+</code></pre>
+      </article>
+
+      <!-- 11 -->
+      <article class="card" data-lang="python" data-title="BST Insert (Python)">
+        <div class="meta">
+          <div class="lang">Python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>BST implementation</h4>
+        <pre><code class="code">class Node:
+    def __init__(self, city, population):
+        self.city = city
+        self.population = population
+        self.left = None
+        self.right = None
+
+
+class CityBST:
+    def __init__(self):
+        self.root = None
+
+    # --- INSERTION ---
+    def insert(self, root, city, population):
+        if root is None:
+            return Node(city, population)
+
+        if city.lower() < root.city.lower():
+            root.left = self.insert(root.left, city, population)
+        elif city.lower() > root.city.lower():
+            root.right = self.insert(root.right, city, population)
+        else:
+            print(f"{city} already exists! Updating population...")
+            root.population = population
+        return root
+
+    # --- SEARCH (returns node and comparison count) ---
+    def search(self, root, city):
+        comparisons = 0
+        current = root
+        while current:
+            comparisons += 1
+            if city.lower() == current.city.lower():
+                return current, comparisons
+            elif city.lower() < current.city.lower():
+                current = current.left
+            else:
+                current = current.right
+        return None, comparisons
+
+    # --- UPDATE POPULATION ---
+    def update_population(self, root, city, new_pop):
+        node, comp = self.search(root, city)
+        if node:
+            node.population = new_pop
+            print(f"Updated {city}'s population to {new_pop}. (Comparisons: {comp})")
+        else:
+            print(f"{city} not found in records. (Comparisons: {comp})")
+
+    # --- DELETE CITY ---
+    def delete(self, root, city):
+        if root is None:
+            return root
+
+        if city.lower() < root.city.lower():
+            root.left = self.delete(root.left, city)
+        elif city.lower() > root.city.lower():
+            root.right = self.delete(root.right, city)
+        else:
+            # Node to delete found
+            if root.left is None:
+                return root.right
+            elif root.right is None:
+                return root.left
+
+            # Node with two children
+            temp = self.min_value_node(root.right)
+            root.city, root.population = temp.city, temp.population
+            root.right = self.delete(root.right, temp.city)
+
+        return root
+
+    def min_value_node(self, node):
+        current = node
+        while current.left is not None:
+            current = current.left
+        return current
+
+    # --- DISPLAY ASCENDING (A → Z) ---
+    def display_ascending(self, root):
+        if root:
+            self.display_ascending(root.left)
+            print(f"{root.city} → {root.population}")
+            self.display_ascending(root.right)
+
+    # --- DISPLAY DESCENDING (Z → A) ---
+    def display_descending(self, root):
+        if root:
+            self.display_descending(root.right)
+            print(f"{root.city} → {root.population}")
+            self.display_descending(root.left)
+
+
+# --- MAIN PROGRAM ---
+if __name__ == "__main__":
+    bst = CityBST()
+    root = None
+
+    while True:
+        print("\n=== City Population Management System ===")
+        print("1. Add / Update City")
+        print("2. Delete City")
+        print("3. Search City")
+        print("4. Update Population")
+        print("5. Display Cities (Ascending)")
+        print("6. Display Cities (Descending)")
+        print("7. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            city = input("Enter city name: ")
+            pop = int(input("Enter population: "))
+            root = bst.insert(root, city, pop)
+
+        elif choice == "2":
+            city = input("Enter city name to delete: ")
+            root = bst.delete(root, city)
+            print(f"{city} deleted (if existed).")
+
+        elif choice == "3":
+            city = input("Enter city name to search: ")
+            node, comp = bst.search(root, city)
+            if node:
+                print(f"{city} found with population {node.population}.")
+            else:
+                print(f"{city} not found.")
+            print(f"Comparisons made: {comp}")
+
+        elif choice == "4":
+            city = input("Enter city name: ")
+            pop = int(input("Enter new population: "))
+            bst.update_population(root, city, pop)
+
+        elif choice == "5":
+            print("\nCities in Ascending Order:")
+            bst.display_ascending(root)
+
+        elif choice == "6":
+            print("\nCities in Descending Order:")
+            bst.display_descending(root)
+
+        elif choice == "7":
+            print("Exiting program.")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+</code></pre>
+      </article>
+
+      <!-- 12 -->
+      <article class="card" data-lang="bash" data-title="Simple Shell Script">
+        <div class="meta">
+          <div class="lang">python</div>
+          <div class="actions">
+            <button class="small-btn" data-action="copy">Copy</button>
+            <button class="small-btn" data-action="download">Download</button>
+          </div>
+        </div>
+        <h4>Bucket</h4>
+        <pre><code class="code">class Bucket:
+    def __init__(self, depth, size):
+        self.depth = depth
+        self.size = size
+        self.items = {}  # Dictionary for storing key-value pairs
+
+    def is_full(self):
+        return len(self.items) >= self.size
+
+    def insert(self, key, value):
+        self.items[key] = value
+
+    def delete(self, key):
+        if key in self.items:
+            del self.items[key]
+
+    def search(self, key):
+        return self.items.get(key, None)
+
+class ExtendibleHashTable:
+    def __init__(self, bucket_size=2):
+        self.global_depth = 1
+        self.bucket_size = bucket_size
+        self.directory = [Bucket(self.global_depth, bucket_size) for _ in range(2)]
+
+    def _hash(self, key):
+        return hash(key) & ((1 << self.global_depth) - 1)
+
+    def insert(self, key, value):
+        index = self._hash(key)
+        bucket = self.directory[index]
+
+        if key in bucket.items or not bucket.is_full():
+            bucket.insert(key, value)
+            print(f"Inserted ({key}, {value}) into bucket {index}")
+            return
+
+        # Bucket is full, need to split
+        print(f"Bucket {index} is full. Splitting...")
+        self._split_bucket(index)
+        # Re-insert the key
+        self.insert(key, value)
+
+    def _split_bucket(self, index):
+        old_bucket = self.directory[index]
+        local_depth = old_bucket.depth
+        old_bucket.depth += 1
+
+        if old_bucket.depth > self.global_depth:
+            self._double_directory()
+
+        new_bucket = Bucket(old_bucket.depth, self.bucket_size)
+
+        # Update directory to point to new buckets
+        for i in range(len(self.directory)):
+            if self.directory[i] is old_bucket and ((i >> local_depth) & 1):
+                self.directory[i] = new_bucket
+
+        # Rehash the keys in the old bucket
+        all_items = list(old_bucket.items.items())
+        old_bucket.items.clear()
+
+        for k, v in all_items:
+            self.insert(k, v)  # Will hash and reinsert into appropriate bucket
+
+    def _double_directory(self):
+        print("Doubling directory size.")
+        self.directory += self.directory
+        self.global_depth += 1
+
+    def search(self, key):
+        index = self._hash(key)
+        value = self.directory[index].search(key)
+        if value is not None:
+            print(f"Found key {key} with value {value} in bucket {index}")
+        else:
+            print(f"Key {key} not found.")
+        return value
+
+    def delete(self, key):
+        index = self._hash(key)
+        bucket = self.directory[index]
+        if key in bucket.items:
+            bucket.delete(key)
+            print(f"Key {key} deleted from bucket {index}")
+        else:
+            print(f"Key {key} not found for deletion.")
+
+    def display(self):
+        seen = set()
+        print("\nDirectory:")
+        for i, bucket in enumerate(self.directory):
+            if id(bucket) not in seen:
+                seen.add(id(bucket))
+                print(f"Bucket {i} (depth={bucket.depth}): {bucket.items}")
+                
+ht = ExtendibleHashTable(bucket_size=2)
+
+ht.insert(1, "One")
+ht.insert(2, "Two")
+ht.insert(3, "Three")
+ht.insert(4, "Four")
+ht.insert(5, "Five")
+
+ht.display()
+
+ht.search(3)
+ht.delete(3)
+ht.search(3)
+
+ht.display()
+</code></pre>
+      </article>
+
+    </div>
+  </section>
+
+  <div id="toast" class="copy-toast">Copied ✅</div>
+  <div class="splash-cursor" id="splash"></div>
+
+  <footer style="padding:3rem 6%;text-align:center;color:#aaa">Built by Mayur — Feel free to edit code blocks. Want syntax highlighting? I can add Prism.js.</footer>
+
+  <script>
+// Cursor
+const splash = document.getElementById('splash');
+document.addEventListener('mousemove', e => {splash.style.left = e.clientX + 'px'; splash.style.top = e.clientY + 'px';});
+document.addEventListener('mousedown', ()=> splash.classList.add('splash'));
+document.addEventListener('mouseup', ()=> setTimeout(()=>splash.classList.remove('splash'),300));
+
+// Copy and Download handlers
+const toast = document.getElementById('toast');
+function showToast(msg='Copied ✅'){
+  toast.innerText = msg; toast.style.display='block';
+  setTimeout(()=> toast.style.display='none',1600);
+}
+
+function downloadText(filename, text){
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], {type:'text/plain'}));
+  a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+}
+
+// delegate events on cards
+document.getElementById('codes-grid').addEventListener('click', e =>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  const card = btn.closest('.card');
+  const codeEl = card.querySelector('.code');
+  const text = codeEl.innerText.replace(/\u00A0/g,' ');
+  if(btn.dataset.action === 'copy'){
+    navigator.clipboard.writeText(text).then(()=> showToast('Code copied to clipboard!'))
+    .catch(()=> showToast('Copy failed — select and copy manually'));
+  }
+  if(btn.dataset.action === 'download'){
+    const title = card.getAttribute('data-title') || 'code';
+    const lang = card.getAttribute('data-lang') || 'txt';
+    const ext = ({python:'py',javascript:'js',c:'c',cpp:'cpp',java:'java',html:'html',sql:'sql',bash:'sh'})[lang] || 'txt';
+    downloadText(title.replace(/\s+/g,'_') + '.' + ext, text);
+    showToast('Downloaded');
+  }
+});
+
+// Copy All
+document.getElementById('copy-all').addEventListener('click', async ()=>{
+  const codes = Array.from(document.querySelectorAll('.card .code')).map(c=>c.innerText).join('\n\n/* --- next snippet --- */\n\n');
+  try{ await navigator.clipboard.writeText(codes); showToast('All codes copied!') }catch(e){ showToast('Copy failed') }
+});
+
+// Filter/search
+const filter = document.getElementById('filter');
+filter.addEventListener('input', ()=>{
+  const q = filter.value.trim().toLowerCase();
+  document.querySelectorAll('.card').forEach(card=>{
+    const title = card.getAttribute('data-title').toLowerCase();
+    const lang = card.getAttribute('data-lang').toLowerCase();
+    const match = title.includes(q) || lang.includes(q);
+    card.style.display = q ? (match ? 'block' : 'none') : 'block';
+  })
+});
+
+// Accessibility: keyboard copy shortcut (focus a card then press c)
+document.addEventListener('keydown', e=>{
+  if((e.ctrlKey || e.metaKey) && e.key.toLowerCase()==='c'){
+    const focused = document.activeElement.closest && document.activeElement.closest('.card');
+    if(focused){
+      const code = focused.querySelector('.code').innerText; navigator.clipboard.writeText(code).then(()=>showToast('Copied'));
+    }
+  }
+});
+  </script>
+</body>
+</html>
